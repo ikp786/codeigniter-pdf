@@ -1,0 +1,24 @@
+RewriteEngine on
+RewriteCond $1 !^(index\.php|resources|robots\.txt)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L,QSA] 
+
+
+# RewriteEngine on
+# RewriteCond %{HTTP_HOST} ^(www.)?gunjangroup.com$
+# RewriteCond %{REQUEST_URI} !^/new2/
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^(.*)$ /subdir/$1
+# RewriteCond %{HTTP_HOST} ^(www.)?gunjangroup.com$
+# RewriteRule ^(/)?$ new2/index.php [L]
+
+
+# RewriteRule ^(.*)$ shop/$1 [L,QSA]
+
+# http://www.gunjangroup.com/* -> wwwroot/new2/*
+
+# RewriteEngine on
+# RewriteCond %{REQUEST_URI} ^/$
+# RewriteRule (.*) http://www.gunjangroup.com/new2 [R=301,L]
